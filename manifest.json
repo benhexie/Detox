@@ -1,0 +1,31 @@
+{
+    "name": "Detox",
+    "version": "1.0.0",
+    "description": "Removes Tox popups.",
+    "manifest_version": 3,
+    "author": "Gabriel Benedict",
+    "permissions": ["tabs"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://admin.saflearn.com/*"],
+            "js": [
+                "scripts/content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "matches": ["https://admin.saflearn.com/*"],
+            "resources": [
+                "assets/images/logo.png"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Detox"
+    }
+}
